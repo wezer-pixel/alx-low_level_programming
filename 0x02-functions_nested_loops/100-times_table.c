@@ -36,7 +36,7 @@ void print_times_tabble(int n)
 				{
 					_putchar((prod / 10) + '0');
 				}
-				_puchar((prod % 10) + '0')
+				_putchar((prod % 10) + '0')
 			}
 			_putchar('\n');
 		}
