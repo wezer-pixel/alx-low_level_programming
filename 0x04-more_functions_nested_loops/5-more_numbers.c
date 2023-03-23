@@ -2,7 +2,6 @@
 
 /**
  * more_numbers - nmbr fct
- * 
  * Return: no return
  */
 
