@@ -1,13 +1,13 @@
 #include "main.h"
 /**
- * _memset - fill the firt n bytes of memory
- * area pointed to by s with the constant type b
- * @s - pointer
- * @b - constant byte
- * @n - number
- * Return: 0
+ * _memset - fill the firt n bytes of memory area
+ * pointed to by s with the constant type b
+ * @b: contant byte to fill memory area pointed by s
+ * @s: pointer to the memory area
+ * @n: number of bytes to be filled
+ * Return: s
  */
-char *_memset(char *s, char b, unsigned int n)
+char *_memset(char *s, char b, unsigned int n);
 {
 	unsigned int j = 0;
 
@@ -16,5 +16,6 @@ char *_memset(char *s, char b, unsigned int n)
 		s[j] = b;
 		j++;
 	}
+
 	return (s);
 }
