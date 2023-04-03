@@ -5,7 +5,7 @@
  * @accept: prefix
  * Return: 0
  */
-unsigned int _strspn(char *s, char *accept);
+unsigned int _strspn(char *s, char *accept)
 {
 	int a = 0, b, c;
 
@@ -13,7 +13,7 @@ unsigned int _strspn(char *s, char *accept);
 	{
 		if (s[b] != 32)
 		{
-			for (c = 0; accept[c] != '\0'; c++;)
+			for (c = 0; accept[c] != '\0'; c++)
 			{
 				if (s[b] == accept[c])
 					a++;
@@ -22,5 +22,6 @@ unsigned int _strspn(char *s, char *accept);
 		else
 			return (a);
 	}
-	return (a);
+		return (a);
+
 }
