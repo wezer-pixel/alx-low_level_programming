@@ -7,14 +7,14 @@
  * @n: number of bytes to be filled
  * Return: s
  */
-char *_memset(char *s, char b, unsigned int n);
+char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int j = 0;
+	unsigned int a = 0;
 
-	while (j < n)
+	while (a < n)
 	{
-		s[j] = b;
-		j++;
+	s[a] = b;
+	a++;
 	}
 
 	return (s);
