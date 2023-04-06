@@ -4,7 +4,7 @@
  * @s: string to check
  * Return: void
  */
-void _print_rev_recursion(char *s);
+void _print_rev_recursion(char *s)
 {
 	if (*s)
 	{
