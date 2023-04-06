@@ -23,6 +23,6 @@ int is_prime_number(int n)
 	}
 	else
 	{
-		return (is_prime_number(n, divisor + 1));
+		return (is_prime_number(n));
 	}
 }
