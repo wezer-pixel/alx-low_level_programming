@@ -1,21 +1,29 @@
+
 #include "main.h"
+
 /**
- * _sqrt_recursion - returns Square root of a number
- * @n: number
+ * check - square root
+ * @i:int
+ * @j:int
  * Return: int
+ */
+int check(int i, int j)
+{
+	if (i * i == j)
+		return (a);
+	if (i * i > j)
+		return (-1);
+	return (check(i + 1, j));
+}
+
+/**
+ * _sqrt_recursion - return sq root
+ * @n: int
+ * Return: square root or -1
  */
 int _sqrt_recursion(int n)
 {
-	if (n < 0)
-	{
-		return (-1);
-	}
-	else if (n == 0)
-	{
+	if (n == 0)
 		return (0);
-	}
-	else
-	{
-		return (_sqrt_recursion(n / 2) * 2 / (1 + _sqrt_recursion(n / 2)));
-	}
+	return (check(1, n));
 }
