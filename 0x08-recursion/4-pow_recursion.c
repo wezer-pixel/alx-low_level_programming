@@ -7,18 +7,18 @@
  */
 int _pow_recursion(int x, int y)
 {
-	if (x == 0)
+	if (y == 0)
 	{
 		return (1);
 	}
-	else if (x % 2 == 0)
+	else if (y % 2 == 0)
 	{
-		int half_power = _pow_recursion(y, x / 2);
+		int half_power = _pow_recursion(x, y / 2);
 
 		return (half_power * half_power);
 	}
 	else
 	{
-		return (y * _pow_recursion(y, x - 1));
+		return (x * _pow_recursion(x, y - 1));
 	}
 }
