@@ -23,8 +23,8 @@ int main(int argc, char **argv)
 
 	if (total < 0)
 	{
-		printf("Error\n");
-		return (1);
+		printf("0\n");
+		//return (1);
 	}
 
 	for (i = 0; total > 0 && i < sizeof(cents) / sizeof(cents[0]); i++)
