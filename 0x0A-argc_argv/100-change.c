@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 
 	total = atoi(argv[1]), count = 0;
 
-	if (total <= 0)
+	if (total < 0)
 	{
 		printf("Error\n");
 		return (1);
