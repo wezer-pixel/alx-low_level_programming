@@ -5,17 +5,18 @@
  * amount efficiently
  * @argc: argument count
  * @argv: argument vector
+ * Return: 0 or 1
  */
 int main(int argc, char **argv)
 {
-	long unsigned int i;
+	unsigned long int i;
 	int cents[] = {25, 10, 5, 2, 1};
 	int total, count;
 
 	if (argc != 2)
 	{
 		fprintf(stderr, "Error\n");
-		return 1;
+		return (1);
 	}
 
 	total = atoi(argv[1]), count = 0;
@@ -23,10 +24,10 @@ int main(int argc, char **argv)
 	if (total <= 0)
 	{
 		fprintf(stderr, "Error\n");
-		return 1;
+		return (1);
 	}
 
-	for (i = 0; total > 0 && i < sizeof(cents)/sizeof(cents[0]); i++)
+	for (i = 0; total > 0 && i < sizeof(cents) / sizeof(cents[0]); i++)
 	{
 		count += total / cents[i];
 		total %= cents[i];
@@ -34,5 +35,5 @@ int main(int argc, char **argv)
 
 	printf("%d\n", count);
 
-	return 0;
+	return (0);
 }
