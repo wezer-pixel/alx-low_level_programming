@@ -6,7 +6,7 @@
  * @str: string to copy
  * Return: a pointer to the string or NULL if empty
  */
-char *_strdup(cons char *str)
+char *_strdup(const char *str)
 {
 	if (str == NULL)
 	{
