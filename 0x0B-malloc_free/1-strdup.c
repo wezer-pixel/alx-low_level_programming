@@ -8,12 +8,14 @@
  */
 char *_strdup(char *str)
 {
+	size_t len;
+
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	size_t len = strlen(str);
+	len = strlen(str);
 
 	copy = (char *)malloc(len + 1);
 	if (copy == NULL)
