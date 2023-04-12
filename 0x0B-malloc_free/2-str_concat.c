@@ -15,13 +15,13 @@ char *str_concat(char *s1, char *s2)
 
 	len1 = s1 != NULL ? strlen(s1) : 0;
 	len2 = s2 != NULL ? strlen(s2) : 0;
+	result - (char *)malloc(len1 + len2 +1);
 
 	if (s1 == NULL && s2 == NULL)
 	{
 		return (NULL);
 	}
 
-	result = (char *)malloc(len1 + len2 + 1);
 	if (result == NULL)
 		return (NULL);
 
