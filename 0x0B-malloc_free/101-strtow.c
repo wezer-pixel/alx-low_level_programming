@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 void util(char **, char *);
-void create_word(char **, chae *, int, int, int);
+void create_word(char **, char *, int, int, int);
 /**
  * strtow - split string into words.
  * @str: the string
