@@ -38,7 +38,7 @@ static void copy_word(char *word, char *str, int start, int end)
 
 	for (i = start; i < end, i++)
 	{
-		word[i - start] =str[i];
+		word[i - start] = str[i];
 	}
 	word[end - start] = '\0';
 }
@@ -51,20 +51,21 @@ static void copy_word(char *word, char *str, int start, int end)
 char **strtow(char *str)
 {
 	int i, num_words, word_index = 0;
+	int **words;
 
-	if (str = NULL || *str == '\0')
+	if (str == NULL || *str == '\0')
 	{
 		return (NULL);
 	}
 
 	num_words = count_words(str);
 	words = (char **)malloc(sizeof(char *) * (num_words + 1));
-	if (words ==NULL)
+	if (words == NULL)
 	{
 		return (NULL);
 	}
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++);
 	{
 		if (isspace(str[i]))
 		{
@@ -78,12 +79,11 @@ char **strtow(char *str)
 			i++;
 		}
 
-		int end =i;
+		int end = i;
 
-		word = (char *)malloc(sizeof(char) * (end -start +1));
+		word = (char *)malloc(sizeof(char) * (end -start + 1));
 		if (word == NULL)
 		{
-			//free previously allocated woeds
 			for (int j = 0; j < word_index; j++)
 			{
 				free(words[j]);
@@ -92,7 +92,7 @@ char **strtow(char *str)
 			return (NULL);
 		}
 
-		copy_word(wors, str, start, end);
+		copy_word(words, str, start, end);
 		words[word_index++] = word;
 	}
 
