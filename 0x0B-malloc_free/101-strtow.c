@@ -1,99 +1,96 @@
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+
+void util(char **, char *);
+void create_word(char **, chae *, int, int, int);
 /**
- * count_words - counts words in a string
+ * strtow - split string into words.
  * @str: the string
- * Return: number of words
- */
-static int count_words(char *str)
-{
-	int i, count = 0, in_word = 0;
-
-	for (i = 0 ; str[i] != '\0'; i++)
-	{
-		if (isspace(str[i]))
-		{
-			in_word = 0;
-		}
-		else if (in_word == 0)
-		{
-			in_word = 1;
-			count++;
-		}
-	}
-	return (count);
-}
-
-/**
- * copy_word - copy word from a string to a new string
- * @word: the word
- * @start: start index source string
- * @end: end index of source string
- */
-static void copy_word(char *word, char *str, int start, int end)
-{
-	int i;
-
-	for (i = start; i < end; i++)
-		word[i - start] = str[i];
-
-	word[end - start] = '\0';
-}
-
-/**
- * strtow - split strong to words
- * @str: the string
- * Return: pointer to array of words
+ *
+ * Return: pointer to words
  */
 char **strtow(char *str)
 {
-	int i, num_words, word_index = 0;
+	int i, flag, len;
 	char **words;
 
-	if (str == NULL || *str == '\0')
-	{
+	if (str == NULL || str[0] == '\0' || (str[0] == ' ' && str[1] == '\0'))
 		return (NULL);
+
+	i = flag = len = 0;
+	while (str[i])
+	{
+		if (flag == 0 && str[i] != ' ')
+			flag = 1;
+		if (i > 0 && str[i] == ' ' && str[i - 1] != ' ')
+		{
+			flag = 0;
+			len++;
+		}
+		i++;
 	}
 
-	num_words = count_words(str);
-	words = (char **)malloc(sizeof(char *) * (num_words + 1));
+	len += flag == 1 ? 1 : 0;
+	if (len == 0)
+		return (NULL);
+
+	words = (char **)malloc(sizeof(char *) * (len + 1));
 	if (words == NULL)
-	{
 		return (NULL);
-	}
 
-	for (i = 0; str[i] != '\0'; i++);
-	{
-		if (isspace(str[i]))
-			continue;
-	}
-
-		int start = i;
-
-		while (str[i] != '\0' && !isspace(str[i]))
-		{
-			i++;
-		}
-
-		int end = i;
-
-		word = (char *)malloc(sizeof(char) * (end -start + 1));
-		if (word == NULL)
-		{
-			for (int j = 0; j < word_index; j++)
-			{
-				free(words[j]);
-			}
-			free(words);
-			return (NULL);
-		}
-
-		copy_word(words, str, start, end);
-		words[word_index++] = word;
-	}
-
-	words[word_index] = NULL;
+	util(words, str);
+	words[len] = NULL;
 	return (words);
+}
+
+/**
+ * util - fetch words into an array
+ * @words: strings array
+ * @str: the string
+ */
+void util(char **words, char *str)
+{
+	int i, j, start, flag;
+
+	i = j = flag = 0;
+	while (str[i])
+	{
+		if (flag == 0 && str[i] != ' ')
+		{
+			start = i;
+			flag = 1;
+		}
+
+		if (i > 0 && str[i] == ' ' && str[i - 1] != ' ')
+		{
+			create_word(words, str, start, i, j);
+			j++;
+			flag = 0;
+		}
+
+		i++;
+	}
+
+	if (flag == 1)
+		create_word(words, str, start, i, j);
+}
+
+/**
+ * create_word - create word and insert it into the array
+ * @words: array of strings
+ * @str: the string
+ * @start: start index of word
+ * @end: stop index of word
+ * @index: index of array to insert the word
+ */
+void create_word(char **words, char *str, int start, int end, int index)
+{
+	int i, j;
+
+	i = end - start;
+	words[index] = (char *)malloc(sizeof(char) * (i + 1));
+
+	for (j = 0; start < end; start++, j++)
+		words[index][j] = str[start];
+	words[index][j] = '\0';
 }
