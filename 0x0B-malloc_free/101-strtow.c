@@ -36,10 +36,9 @@ static void copy_word(char *word, char *str, int start, int end)
 {
 	int i;
 
-	for (i = start; i < end, i++)
-	{
+	for (i = start; i < end; i++)
 		word[i - start] = str[i];
-	}
+
 	word[end - start] = '\0';
 }
 
@@ -51,7 +50,7 @@ static void copy_word(char *word, char *str, int start, int end)
 char **strtow(char *str)
 {
 	int i, num_words, word_index = 0;
-	int **words;
+	char **words;
 
 	if (str == NULL || *str == '\0')
 	{
@@ -68,9 +67,8 @@ char **strtow(char *str)
 	for (i = 0; str[i] != '\0'; i++);
 	{
 		if (isspace(str[i]))
-		{
 			continue;
-		}
+	}
 
 		int start = i;
 
