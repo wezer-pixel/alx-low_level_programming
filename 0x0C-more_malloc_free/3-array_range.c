@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * array_range - create array of in
+ * *array_range - create array of in
  * @min: min range of stored vals
  * @max: max range of stred vals and no of elements
  * Return: pointer to array
