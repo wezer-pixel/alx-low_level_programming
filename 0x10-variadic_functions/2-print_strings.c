@@ -4,7 +4,7 @@
  * program
  * @separator: separates the strings
  * @n: number of unnamed parameters
- * Return: 0
+ * Return: void 
  */
 void print_strings(const char *separator, const unsigned int, ...)
 {
@@ -14,7 +14,7 @@ void print_strings(const char *separator, const unsigned int, ...)
 
 	va_start(ap, n);
 	if (separator = NULL)
-		deparator = "";
+		separator = "";
 
 	for (i = 0; i < n; i++)
 	{
