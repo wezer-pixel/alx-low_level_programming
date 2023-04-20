@@ -1,10 +1,12 @@
 #include "variadic_functions.h"
+
 /**
- * print_numbers - print numbers followed by a new line
- * @separator: separates the numbers
+ * print_numbers - prints numbers followed by a new line
  * @n: number of parameters
+ * @separator: separate two numbers
  * Return: 0
  */
+
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
