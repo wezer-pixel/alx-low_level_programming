@@ -1,51 +1,49 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
- * main - prints the opcodes of itself
- * @ac: argc
- * @av: argv
- * Return: 0
+ * main - print opcodes of its main function
+ * @argc: argument counter
+ * @argv: argument vector
+ *
+ * Return: O
  */
-
-/**
- * print_opcodes - print opcodes of proaram
- * @a: address to main function
- * @n: number of bytes to print
- */
-void print_opcodes(int n);
-
-int main(int ac, char *av[])
+int main(int argc, char **argv)
 {
 	int n;
 
-	if (ac != 2)
+	if (argc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
-
-	n = atoi(av[1]);
+	n = atoi(argv[1]);
 	if (n < 0)
 	{
 		printf("Error\n");
-		return (2);
+		exit(2);
 	}
-
-	print_opcodes(n);
+	print_opcodes((char *)&main, n);
 	return (0);
 }
 
-void print_opcodes(int n)
+/**
+ * print_opcodes - print opcodes of this program
+ * @a: address of the main function
+ * @n: number of bytes to print
+ *
+ * Return: void
+ */
+void print_opcodes(char *a, int n)
 {
-	int i = 0;
-	char *ptr = (char *)&print_opcodes;
+	int i;
 
 	for (i = 0; i < n; i++)
 	{
-		printf("%02x", *(ptr + 1) & 0xff);
+		printf("%.2hhx", a[i]);
 		if (i < n - 1)
 			printf(" ");
 	}
 	printf("\n");
+
 }
