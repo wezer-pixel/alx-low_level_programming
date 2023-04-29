@@ -1,10 +1,12 @@
-#include <stdio.h>
+#include<stdio.h>
 
+/**
+ * first - imolement to print before main
+ */
 void first(void) __attribute__ ((constructor));
 
 /**
- * first - print a sentence before  main
- * function is executed
+ * first - implementatiion of first
  */
 void first(void)
 {
