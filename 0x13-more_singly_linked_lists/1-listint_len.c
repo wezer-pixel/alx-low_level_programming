@@ -8,9 +8,9 @@ size_t listint_len(const linstint_t *h)
 {
 	size_t count = 0;
 
-	while (head)
+	while (h)
 	{
-		head = head->next;
+		h = h->next;
 		count++;
 	}
 	return (count);
