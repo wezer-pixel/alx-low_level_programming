@@ -15,5 +15,5 @@ size_t print_listint(const listint_t *head)
 		head = head->next;
 		count++;
 	}
-	return (count)
+	return (count);
 }
