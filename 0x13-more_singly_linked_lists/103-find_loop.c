@@ -22,7 +22,7 @@ listint_t *find_listint_loop(listint_t *head)
 			break;
 		}
 	}
-	if (head == NULL)
+	if (!fast || !slow || !fast->next)
 		return (NULL);
 
 	while (slow != fast)
