@@ -12,7 +12,7 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *current, *next;
 	size_t i;
 
-	if (h == NULL || *h == NULL)
+	if (h == NULL)
 		return (0);
 
 	current = *h;
