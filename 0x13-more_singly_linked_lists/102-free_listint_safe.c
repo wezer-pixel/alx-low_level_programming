@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  * free_listint_safe - frees a listint_t linked list.
- * @head: double pointer to the start of the list
+ * @h: double pointer to the start of the list
  *
  * Return: the size of the list that was free'd
  */
