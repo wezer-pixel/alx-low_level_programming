@@ -12,10 +12,10 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *current, *next;
 	size_t i;
 
-	if (head == NULL || *head == NULL)
+	if (h == NULL || *h == NULL)
 		return (0);
 
-	current = *head;
+	current = *h;
 	while (current)
 	{
 		next = current->next;
@@ -24,7 +24,7 @@ size_t free_listint_safe(listint_t **h)
 			if (current == list[i])
 			{
 				free(list);
-				*head = NULL;
+				*h = NULL;
 				return (size);
 			}
 		}
@@ -34,7 +34,7 @@ size_t free_listint_safe(listint_t **h)
 		current = next;
 	}
 	free(list);
-	*head = NULL;
+	*h = NULL;
 	return (size);
 }
 
