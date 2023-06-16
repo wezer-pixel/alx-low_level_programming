@@ -1,4 +1,4 @@
-#include "lists.h"
+#include "list.h"
 
 /**
  * free_dlistint - free a dlistint_t list

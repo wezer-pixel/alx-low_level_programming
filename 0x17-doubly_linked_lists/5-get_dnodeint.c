@@ -1,4 +1,4 @@
-#include "lists.h"
+#include "list.h"
 
 /**
  * get_dnodeint_at_index - find specific node of a dll
