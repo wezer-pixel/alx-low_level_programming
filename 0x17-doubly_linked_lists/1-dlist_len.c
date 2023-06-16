@@ -1,7 +1,7 @@
 #include "list.h"
 
 /**
- * dlidtint_len - count number of nodes in a dll
+ * dlistint_len - count number of nodes in a dll
  * @h: ptr to head node
  * Return: number of nodes
  */
