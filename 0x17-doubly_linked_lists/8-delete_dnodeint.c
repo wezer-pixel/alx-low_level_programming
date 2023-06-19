@@ -1,7 +1,9 @@
-#include "list.h"
+#include "lists.h"
+#include <stdlib.h>
+
 /**
- * delete_dnodeint_at_index - delete node at specific index
- * @head: double ptr to list
+ * delete_dnodeint_at_index - deletes a node at a specific index
+ * @head: double pointer to the linked list
  * @index: index at which to delete node
  *
  * Return: 1 on success, -1 on failure

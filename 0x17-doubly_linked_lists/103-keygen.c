@@ -1,4 +1,6 @@
-#include "list.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 /**
  * main - generate a key depending on a username for crackme5

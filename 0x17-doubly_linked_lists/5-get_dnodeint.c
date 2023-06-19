@@ -1,11 +1,11 @@
-#include "list.h"
+#include "lists.h"
 
 /**
- * get_dnodeint_at_index - find specific node of a dll
- * @head: ptr to begin of list
- * @index: index of node to retrieve
+ * get_dnodeint_at_index - finds a specific node of a linked list
+ * @head: pointer to the beginning of the list
+ * @index: index of the node to retrieve
  *
- * Return: pointer to indexed node, or NULL on failure
+ * Return: pointer to the indexed node, or NULL on failure
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {

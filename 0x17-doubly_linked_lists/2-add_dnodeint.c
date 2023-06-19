@@ -1,8 +1,9 @@
-#include "list.h"
+#include "lists.h"
+#include <stdlib.h>
 
 /**
- * add_dnodeint - add new node at beginning of a dll
- * @head: double pointer to the beginning of the dll
+ * add_dnodeint - add a new node at the beginning of the linked list
+ * @head: double pointer to the beginning of the linked list
  * @n: value to add to the new node
  *
  * Return: pointer to the new node, or NULL on failure
